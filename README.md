@@ -1,3 +1,5 @@
+
+
 <p align="center"><img src="docs/assets/github-hero.png" alt="Ginja Live Rig Monitor: From Studio To Stage" width="100%"></p>
 
 <div align="center">
