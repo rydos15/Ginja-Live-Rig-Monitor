@@ -1,0 +1,13 @@
+*.exe
+*.dll
+*.pyd
+*.py
+*.pyc
+*.zip
+*.jsonl
+*.log
+__pycache__/
+.venv/
+private-builds/
+build/
+dist/
