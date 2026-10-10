@@ -2,6 +2,11 @@
 
 <div align="center">
 
+## Watch The Product Showcase
+
+**[▶ Watch / Download — From Studio To Stage](https://github.com/rydos15/Ginja-Live-Rig-Monitor/releases/tag/showcase-v1)**
+
+See Ginja’s dashboard, popout monitors, and MIDI workflows in a real studio and live-performance setup.
 # Ginja Live Rig Monitor
 
 **Monitor · Route · Integrate · Perform · Stream · Troubleshoot**
