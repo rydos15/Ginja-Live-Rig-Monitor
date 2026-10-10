@@ -1,7 +1,5 @@
 
 
-https://github.com/user-attachments/assets/5513752c-b422-45b7-8ff4-940820663562
-
 
 
 
@@ -13,6 +11,8 @@ https://github.com/user-attachments/assets/5513752c-b422-45b7-8ff4-940820663562
 ## Watch The Product Showcase
 
 **[▶ Watch / Download — From Studio To Stage](https://github.com/rydos15/Ginja-Live-Rig-Monitor/releases/tag/showcase-v1)**
+
+https://github.com/user-attachments/assets/5513752c-b422-45b7-8ff4-940820663562
 
 See Ginja’s dashboard, popout monitors, and MIDI workflows in a real studio and live-performance setup.
 # Ginja Live Rig Monitor
