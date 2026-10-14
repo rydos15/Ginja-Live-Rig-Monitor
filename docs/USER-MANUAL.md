@@ -464,9 +464,9 @@ Use a repeatable sequence: confirm the symptom, inspect the relevant status, the
 
 Missing artwork usually calls for a complete re-extraction. MIDI issues call for cable, driver and port-sharing checks. OBS needs matching WebSocket settings and a password each run. FPS needs the selected process and console provider. Audio enumeration needs the packaged helper. Check the Event Monitor before changing several settings at once.
 
-![Actual Ginja interface or identified illustrative scene](assets/monitoring.png)
+![Saved Event Monitor timeline with simulated test events](assets/events.png)
 
-*Actual Interface Capture. Displayed Values Are A Recorded Snapshot Or Example.*
+*Saved Event Monitor Example With Simulated Test Events.*
 
 1. **Reproduce:** Describe exactly what you did and what changed.
 2. **Inspect:** Compare the corresponding card and event timeline.
