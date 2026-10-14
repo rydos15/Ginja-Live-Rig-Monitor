@@ -17,6 +17,17 @@ https://github.com/user-attachments/assets/5513752c-b422-45b7-8ff4-940820663562
 See Ginja’s dashboard, popout monitors, and MIDI workflows in a real studio and live-performance setup.
 # Ginja Live Rig Monitor
 
+### Explore The Project
+
+**[Start Here: Rig Integration And Software Rollout — PDF](https://github.com/rydos15/Ginja-Live-Rig-Monitor/releases/download/portfolio-docs-v1/Ginja_Rig_Integration_And_Software_Rollout.pdf)**  
+The presentation companion to the video: the routing problem, integration decisions, coordinated workflows and software delivery approach.
+
+**[Go Deeper: Code Anatomy — PDF](https://github.com/rydos15/Ginja-Live-Rig-Monitor/releases/download/portfolio-docs-v1/Ginja_Code_Anatomy.pdf)**  
+The technical reference connecting application features to MIDI input, rule matching, execution, dashboard feedback and diagnostics.
+
+Ginja is a working Windows application developed for my studio workflow. Application source and binaries remain private. A live demonstration is available on request.
+
+
 **Monitor · Route · Integrate · Perform · Stream · Troubleshoot**
 
 Created by **Ry Dos** · [Visual Manual](docs/USER-MANUAL.md) · [Designed PDF](docs/Ginja_Visual_User_Manual.pdf) · [Roadmap](ROADMAP.md) · [Feedback](SUPPORT.md)
