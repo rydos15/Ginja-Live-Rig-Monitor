@@ -38,7 +38,7 @@ Created by **Ry Dos** · [Visual Manual](docs/USER-MANUAL.md) · [Designed PDF](
 
 Ginja brings system readings, MIDI activity, audio-device information and application state into one Windows workspace. Movable popouts put feedback beside the tool in use. A CC-triggered sequence editor sends ordered MIDI messages and supported OBS actions.
 
-The project grew from the creator's studio and live-performance requirements, including a Morningstar MC6 Pro with two custom 3D-printed external controls using resistor ladders. The creator reports successful use in their own workflow. Broader compatibility remains a separate validation task.
+The project grew from my studio and live-performance workflow. I expanded the Morningstar MC6 Pro with a custom 3D-printed setup using two Omniports and sixteen additional physical buttons. Resistor-ladder detection distinguishes the controls, Morningstar programming assigns their behavior, and Ginja maps the resulting CC messages to configured action sequences. I use Ginja in my own workflow; compatibility with other environments requires separate validation.
 
 **This is a portfolio showcase. Application source and executable downloads are not publicly available.**
 
