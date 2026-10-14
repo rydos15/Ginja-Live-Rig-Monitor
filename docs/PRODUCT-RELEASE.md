@@ -1,201 +1,173 @@
-# Ginja Product Release Handbook
+# Ginja Software Delivery Handbook
 
-[Designed PDF](Ginja_Product_Release_Handbook.pdf) · [User Manual](USER-MANUAL.md)
+[Designed PDF](Ginja_Product_Release_Handbook.pdf) · [User Manual](USER-MANUAL.md) · [Architecture](ARCHITECTURE.md) · [Validation](VALIDATION.md)
 
-This is release guidance and a readiness checklist, not an announcement of a tested public executable.
+Created by **Ry Dos**. Revised October 14, 2026.
 
-## Release Scope And Audience
+Ginja is a working Windows application developed for the creator’s studio workflow. Application source and executable remain private. A live demonstration is available on request. This handbook describes a proposed delivery method for a defined environment; it is not a completed customer acceptance report.
 
-### The Current Deliverable
+## Scope And The Operating Workflow
 
-The current public deliverable is a portfolio documentation release: visual manual, product explanation, architecture, support and roadmap. Source and executable stay private. The creator reports practical use in their own rig. The repository does not announce a tested installer, customer deployment or verified compatibility with every represented device.
+Define the job before choosing a configuration.
 
-### The Interviewer Journey
+### Start With The User Task
 
-The README introduces the problem, shows the dashboard and links to the engineering story. A reviewer can then inspect the visual manual, configuration exercises and validation plan. These layers answer different questions: what was built, why it was built, how to use it and what evidence still needs collection.
+Ginja grew from a studio workflow spanning physical controllers, MIDI destinations, production applications and the computer running them. Begin with a task such as selecting a sound and changing an OBS scene from one control. Identify the input, intended actions, receivers and visible outcome. That task becomes the basis for setup, explanation and verification.
 
-### A Future Application Release
+### Separate Observation From Action
 
-A downloadable release requires a resolved dependency-license route, a packaged build, second-PC acceptance results, versioned release notes, required notices and a support path. Preserve the public showcase while those items are completed. Documentation polish alone does not convert a private prototype into a validated distributable product.
+The current application combines monitoring, detachable views, diagnostics and CC-triggered action sequences. A detected device or running process is an observation. A routing rule makes a separate decision about which action to send. Successful transmission still needs confirmation at the receiver: the intended sound, scene, recording or mapped parameter must actually change.
 
-## What Belongs In The Repository
+### Understand This Handbook’s Scope
 
-### Upload The Public Folder
+Ginja is a working Windows application used in the creator’s workflow. Its source and executable remain private; the public materials explain the design and implementation. The delivery practices here describe a repeatable approach for evaluating a defined environment. They are not a record of customer deployment or completed acceptance across other systems.
 
-Extract the Upload To GitHub ZIP and place README.md at the repository root. Keep docs/assets, the PDF manuals, supporting Markdown and .github issue templates in their existing folders. Relative links depend on those paths. Do not flatten the assets or upload only the ZIP as the repository content.
+**Delivery checkpoint:** A clear outcome connects the user’s need to a configuration and an observable result.
 
-### Keep Private Material Separate
+## Environment And A Working Baseline
 
-The separate private review, résumé handoff, build kit, source files, EXEs, raw logs and account credentials do not belong in this public upload package. The profile kit is also separate: its README belongs to the personal profile repository, not the product repository.
+Begin with one known path; add complexity after it works.
 
-### Confirm The Published Result
+### Record The Environment
 
-Open the repository as a visitor and scroll through its README. Click the manual, case study and roadmap links, check image rendering and verify availability wording. Add the final repository URL to your résumé only after this check. A product website is optional; a clear README can serve as the portfolio entry point.
+Identify the application build, Windows version, controller and interface drivers, available MIDI ports and relevant external software. Optional features have their own providers, such as PresentMon for frame observations. Record only requirements supported by the intended workload and actual testing. External applications and drivers remain separately configured components.
 
-## Prerequisites And Installation
+### Establish One Working Path
 
-### State The Requirements
+Connect one controller and one known destination. Confirm that Ginja receives the expected MIDI source, channel, CC and value. Configure a small action, then check the real result at the receiver. For monitoring, compare a card with the application or device it describes. Save the observed values and steps before adding another device or a longer sequence.
 
-Document the Windows versions actually tested, architecture, device drivers and external applications. MIDI hardware and an audio interface require their own setup. Ableton, OBS, Discord and PresentMon are separate products. Do not invent a minimum CPU/RAM specification without testing the intended workload.
+### Check Startup And Completeness
 
-### Portable Installation
+In an authorized demonstration or future packaged evaluation, verify that artwork, required modules and any audio-discovery helper load together. A copied executable alone may not represent a complete package. A new environment needs its own startup, port-access and provider checks. Keep the baseline focused enough that another person can repeat the same task.
 
-For the current private portable approach, extract the complete package, preserving the executable support folders and audio-discovery helper. Test on a PC without Python or development tools. A standalone-looking EXE may still require the other files beside it. An installer can be introduced later with separately tested install/update/remove behavior.
+**Delivery checkpoint:** The baseline is a reproducible configuration, not simply a dashboard that opens.
 
-### First-Run Acceptance
+## Configuration And Saved State
 
-Confirm dashboard/artwork loading, driver access, one known MIDI input and application detection. Configure OBS credentials deliberately and start with a simple workspace. Record the environment and result. Failure should lead to a small, reproducible report rather than a broad unsupported claim about the user's hardware.
+Know which settings change behavior and which change the view.
 
-## Configuration And Persistence
+### Give Controls Explicit Jobs
 
-### Configuration Areas
+A current routing rule matches an input source, channel, CC and trigger value or Any Value. Each action names its target and parameters. Match observed messages rather than assuming tutorial values. Broad source/value matches should be deliberate. Optional value-change triggering suppresses identical repeats; it is not a general noise filter or automatic feedback-loop detector.
 
-Appearance, dashboard visibility, device links, OBS connection, monitoring/startup and system-overlay selections serve different purposes. Routing rules define explicit triggers/actions. Workspace profiles preserve layout/appearance and watched apps, not every application setting. Explain these boundaries so users do not treat a profile as a complete backup.
+### Distinguish Profiles From Routing
 
-### Saved And Temporary State
+Studio and Gamer views select relevant dashboard cards. Custom layout profiles preserve workspace choices such as appearance, watched applications and popout positions. They are separate from routing rules and other service settings. A saved workspace should help an operator find feedback; it should not be described as a complete configuration backup.
 
-The application uses Qt settings under the Ginja / LiveRigMonitor identity. The reviewed OBS implementation saves host/port and keeps the password only for the current run. Discord profile connection and public activity sharing are separate choices. Saved or migrated preferences can restore values after restarting.
+### Preserve A Recoverable Configuration
 
-### Migration And Recovery
+Record the working rule fields, destination names and service settings before changing versions or computers. The reviewed application saves OBS host and port while retaining its password for the current run. Recheck persisted settings after restart. A universal settings export/import procedure is not established here, so transfers and restoration need an explicit, tested method.
 
-Before changing versions, preserve the working build and document settings/rules. A universal configuration export/import or reset workflow has not been documented as an implemented feature. Introduce a supported backup/migration procedure only after testing it. Avoid destructive reset instructions as a first response to a symptom.
+**Delivery checkpoint:** Treat input identity, action targets, workspace layout and credentials as separate configuration responsibilities.
 
-## Versioning And Release Notes
+## Validation And Acceptance Evidence
 
-### Choose A Meaningful Version
+Agree what success means, then observe the full task.
 
-Set a software version when a build is actually prepared. Major changes can signal incompatible behavior, minor changes added functionality and patch changes fixes. The documentation revision V3 is not an application version or proof that an installer exists. Keep those two histories distinct.
+### Define The Expected Result
 
-### Describe The User Impact
+Choose a representative workflow and write its expected outcome before testing. For a multi-step sequence, identify the result required from every destination and the acceptable response behavior. For example, a sound selection and an OBS scene change must both be checked. Agree how partial completion, unexpected actions and recovery will affect acceptance.
 
-For each release, state the concrete problem and resulting behavior. Include added/changed/fixed items, known limitations, tested environments and any configuration migration. Avoid claiming generic stability improvements without evidence. Future features belong in the roadmap until implemented and tested.
+### Exercise The Boundaries
 
-### Preserve The Record
+Run the normal path, then test the relevant exceptions: repeated values, overlapping rules, a missing port, disconnect/reconnect, unavailable OBS, restart and note release. Pair NOTE ON and NOTE OFF on the intended target, pitch and channel. Test Sequence sends actual actions and bypasses trigger waiting, so test the physical control separately after reviewing the output path.
 
-Retain the reviewed package, checksum, dependency inventory and acceptance report for the released version. Compare changes with a known baseline. If a package is replaced, give it a new identifiable version and explain why, rather than silently replacing a file reviewers may already have downloaded.
+### Keep A Useful Test Record
 
-## Packaging And Dependency Inventory
+Record build/environment, steps, expected result, observed result and an evidence reference. Distinguish Pass, Fail and Not Run. Logs show reported steps; receiver observation confirms the task. Documentation rendering and link checks do not establish runtime acceptance. When a feature changes, repeat affected tests and a small working baseline before relying on the new behavior.
 
-### Define The Package
+**Delivery checkpoint:** Acceptance rests on the agreed task result in the intended environment, supported by a traceable record.
 
-Include the application runtime, required artwork/tutorial assets and any packaged helper needed for audio enumeration. Exclude private settings, recordings, temporary work files and source where the chosen license route permits it. Keep external applications separate and clearly identify which components users install themselves.
+## Troubleshooting And Recovery
 
-### Inventory What Is Bundled
+Locate the failed stage before changing the system.
 
-Record exact versions and applicable licenses for Python, the Qt binding/runtime, MIDI, audio, system and optional connection libraries. Also review native libraries included indirectly by the packager. A requirements file alone is not a complete inventory of the files inside an EXE package.
+### Separate The Stages
 
-### Validate The Result
+Start with the symptom and time. Confirm the received event, matching rule, action result and receiver state in order. If sound changes but recording does not start, inspect the recording action and OBS connection rather than changing the controller first. Keep confirmed facts separate from hypotheses, and change one relevant variable before repeating the same task.
 
-Build in a controlled environment and test without development tools. Check artwork paths, the audio helper, startup/tray behavior, MIDI port access and external connections. A build script passing syntax checks is not equivalent to a successful binary build or target-machine test.
+### Use Evidence With Context
 
-## Licenses, Attribution And Media
+Event history, process readings and session reports help correlate what happened. A high CPU value or a ready indicator does not by itself establish the cause. Preserve a small relevant interval and record the configuration around it. Check driver access, receiver mappings, provider availability and external application state when those layers are involved.
 
-### Separate Presentation From Distribution
+### Recover The Operator’s Task
 
-Keep the showcase independent of the unresolved executable-distribution decision. The current app imports PyQt6; proprietary binary distribution requires an appropriate licensing route. A commercial entitlement or a validated alternative such as a suitable PySide/Qt route requires deliberate review. A disclaimer cannot replace those obligations.
+A sequence can stop after earlier actions have completed. Account for destination state and any note that still needs release before repeating it. Use a verified temporary workflow or a compatible known-working build and configuration. Restore operation first, then investigate the underlying cause. Incident management and problem management support these different responsibilities.
 
-### Check Public Visual Assets
+**Delivery checkpoint:** Recovery must consider what already happened, not only the step that failed.
 
-Establish permission for photos, recordings, friend artwork and third-party imagery before publication. Product names identify the tools discussed; no endorsement or certification is claimed. Identify screen replacements and illustrative activity. Do not treat an animated meter or concept integration as evidence of a delivered live connection.
+## Updates And Change Control
 
-### Keep Rights Evidence
+Introduce a bounded change and preserve a way back.
 
-Retain Suno subscription/track records and the original human-created contribution evidence. Paid-plan commercial-use rights do not guarantee copyright protection. Keep the owner identity and dependency rights separate. Review final usage terms and included notices before offering a downloadable executable.
+### Assess The Change
 
-## Privacy And Security Boundaries
+Describe the user need, affected interfaces and settings, expected behavior and risk. Identify who reviews the decision and what evidence is required. This is the purpose of change enablement: make a deliberate decision about a specific change. Avoid mixing unrelated fixes and new integrations into a single unrepeatable evaluation.
 
-### Document Data Handling
+### Prepare And Introduce
 
-Explain local preferences, event history and session reports, including that reports may contain names, paths and errors. Document OBS endpoint use, optional ping, MIDI output ports and Discord profile/activity choices. Avoid promising no network use when optional connections are configured.
+Release preparation connects an identifiable build with change notes, dependencies, configuration guidance, known limits and recovery instructions. Deployment is the introduction into the selected environment. Verify setup and repeat the agreed task in a limited evaluation before expanding. These are proposed delivery practices; this handbook does not claim an existing automated release pipeline.
 
-### Report Responsibly
+### Observe And Recover
 
-Public Issues are for reproducible, redacted bug reports. Never post passwords, user tokens, private account details or unrestricted logs there. A dedicated confidential security contact has not been established; define and verify one before inviting sensitive reports. Do not imply that the GitHub username is a private disclosure channel.
+Compare outcomes with the baseline and collect operator feedback. Preserve the earlier package and check saved-setting compatibility before treating it as a recovery path. An older executable alone may not restore all state. If behavior regresses, contain the affected workflow, communicate the impact and validate the restored task. No automatic updater or cross-device rollback is assumed.
 
-### Avoid Unsupported Assurance
+**Delivery checkpoint:** A useful update includes an observable benefit, a validation record and a recovery decision.
 
-No independent security audit or broad device certification is asserted. A future release needs threat/data-flow review, sensitive-data handling checks and a documented response process appropriate to its scope. Distinguish read-only observation from MIDI/OBS actions that change external state.
+## Handover And Support
 
-## Acceptance Testing And Evidence
+Make the workflow understandable beyond its original creator.
 
-### Use A Reproducible Matrix
+### Teach A Representative Task
 
-Test launch, artwork, MIDI input, trigger matching, ordered outputs, note pairing, OBS state/actions, popouts, profiles, reports, audio discovery and optional FPS capture. Record Windows, app/driver versions, devices and exact steps. Include unplug/reconnect and restart cases, not only the ideal path.
+Show the purpose of the control, the relevant rule and the result at each receiver. Ask the operator to repeat the task and explain where they would look if it failed. Use the saved layout to keep relevant feedback visible. A short teach-back demonstrates understanding more directly than simply listing every application feature.
 
-### Record Pass, Fail And Not Run
+### Leave The Operating Context
 
-Keep the expected result, observed result and evidence reference for each case. Mark unavailable providers separately from zero readings. Publish only measured outcomes. The documentation review and link/layout checks performed here are distinct from runtime acceptance, which still needs target-PC execution.
+Provide the build identifier, environment, working configuration record, task instructions, known limits and recovery steps. Distinguish a saved layout from service credentials and routing rules. Agree what constitutes successful operation and where evidence is retained. For the current portfolio, the video, presentation, technical reference and visual manual serve different parts of that explanation.
 
-### Manage Regressions
+### Make A Report Actionable
 
-After a change, rerun affected workflows and a small baseline. If changing the Qt binding or packaging, broaden checks to UI, signals, helpers and saved settings. Do not invent test counts or badges. A concise honest test report is stronger than an unsupported production-ready label.
+A useful report contains a minimal reproduction, expected and observed outcomes, versions, impact and a redacted evidence excerpt. Identify the next check and its owner. State support expectations without inventing a response-time commitment. Validate a correction against the original steps before marking it resolved, and update guidance when the result changes the operating workflow.
 
-## Updates, Rollback And Removal
+**Delivery checkpoint:** A successful handover leaves a person able to operate, explain and investigate the task.
 
-### Introduce Updates Deliberately
+## Data, Dependencies And Attribution
 
-No automatic updater is claimed. A future portable update should go into a new folder so the old known-working package is retained. Recheck preference compatibility and required assets/helpers. Explain migrations in release notes and verify the result before a critical performance.
+Document the boundaries of the interfaces being used.
 
-### Keep A Recovery Path
+### Describe Data Movement
 
-Preserve the prior build and a documented configuration baseline. If the new build fails, stop testing that build and return to the known setup where appropriate. Application settings may be shared between versions, so an older executable alone is not a guarantee of complete rollback.
+The reviewed implementation stores preferences, rules, events and session reports locally. Reports can contain device/application names, paths and errors. Optional connections have distinct purposes: OBS uses a configured WebSocket endpoint, ping contacts a selected host, hardware links open external tools, and Discord profile connection and public activity sharing are separate choices.
 
-### Document Removal
+### Know What An Evaluation Includes
 
-For a portable package, exit the application before removing its extracted folder. Keep wanted reports and configuration evidence first. Saved settings may remain outside that folder. Provide exact settings/data cleanup instructions only after identifying and testing those locations; do not recommend broad registry deletion.
+Record the dependencies and providers required by the evaluated build. If distribution is later considered, review the actual runtime, bundled libraries and assets, applicable license terms and required notices before selecting a distribution route. This portfolio does not offer an executable or grant an application-use license; its purpose is to explain the working system and delivery method.
 
-## Support And Issue Triage
+### Use Evidence Accurately
 
-### Collect A Useful Report
+Separate live observations, saved readings, tutorial fixtures and illustrative screen edits. Identify planned integrations as planned. Product names and third-party visuals describe the interfaces involved; they do not establish affiliation or endorsement. Public reports should contain only the information needed to explain or reproduce the behavior, with credentials and unrelated personal details removed.
 
-Ask for version/build, Windows, relevant drivers/apps, expected behavior, actual behavior and minimal steps. Attach a redacted event excerpt or session report when helpful. State whether the issue occurs in the developer environment or a packaged build; those paths can behave differently.
+**Delivery checkpoint:** Keep operational evidence useful, proportionate and accurate about what it demonstrates.
 
-### Keep The Scope Clear
+## Expansion Through Defined Interfaces
 
-The repository's issue templates provide a consistent starting point for bugs and suggestions. No response-time commitment, commercial support contract or compatibility guarantee is offered. Distinguish a Ginja defect from a driver, external application, hardware wiring or provider limitation.
+Extend the method one supported input or destination at a time.
 
-### Close The Loop
+### Begin With The Contract
 
-Reproduce the issue, record the proposed fix and validate the same steps again. Update known limitations and release notes when appropriate. Tag a change as fixed only when evidence supports it. Feature requests should identify the workflow/problem rather than promising an integration date before investigation.
+For a proposed feature, define the input event, its source, supported operating mode, intended action and confirmation of success. Decide how authorization, timing, disconnects and recovery should behave. A device picture or architecture arrow communicates an idea; the adapter and test evidence establish the implemented behavior.
 
-## Roadmap And Integration Design
+### Reuse Decisions, Not Assumptions
 
-### Build On Current Behavior
+The current foundation uses source-aware CC rules, ordered MIDI/OBS actions and monitoring feedback. A new product needs its own supported interface and configuration. Push 3 extensions, deeper Ableton integration, Synesthesia, Stream Deck and Xbox-controller workflows remain development directions. The transferable skill is defining the contract and making the workflow testable.
 
-The present foundation is focused monitoring, popouts, diagnostics and explicit CC-triggered action sequences. It is expandable, but the current outputs remain MIDI and supported OBS actions. Broader applications of the pattern should be described as potential workflows rather than implemented arbitrary-protocol routing.
+### Promote Features With Evidence
 
-### Describe Upcoming Work
+Distinguish exploration, implementation, validation and delivered behavior. Add an integration to the current-capability list after its supported scope is implemented and verified. Use operator feedback and observed failure cases to prioritize the next improvement. Keep the evidence tied to a build and environment so later changes can be evaluated against a meaningful baseline.
 
-Push 3 extensions, deeper Ableton integration, Synesthesia coordination, Stream Deck and controller-input workflows are planned directions. For each, define the proposed input, expected action, user problem, dependencies and validation before announcing delivery. Keep screenshots labeled as concepts where appropriate.
+**Delivery checkpoint:** An adaptable platform grows through explicit contracts, verified behavior and understandable operation.
 
-### Show Progress Honestly
+## Related Documentation
 
-A roadmap can distinguish exploration, implementation, validation and delivered behavior once those states are established. Do not assign progress percentages or dates without evidence. Promote a capability into the current list only after implementing it and recording its exact supported scope.
-
-## GitHub Presentation And Media
-
-### Build The Landing Page
-
-GitHub automatically renders README.md beneath the file list. Use a strong hero, concrete product statement, dashboard image and concise paths to the case study/manual. Put the most useful explanation first. A reviewer should not need to browse a maze of folders to understand the project.
-
-### Make The Video Accessible
-
-A linked video or separate uploaded video asset is not automatically a slideshow embedded in the README. Add a clear thumbnail and link once a final public URL is known. Repository assets must respect GitHub upload limits. A website through GitHub Pages is optional and must be configured separately.
-
-### Present The Person And Project
-
-The product repository and personal profile README have different roles. Pin Ginja to the profile and use the product link on the résumé. Use Ry Dos as the public creative identity, with employment/application naming handled consistently. Retain honest boundaries for ownership, AI-assisted work and measured results.
-
-## The Release Decision
-
-### Ready For Portfolio Review
-
-The package provides the designed user manual, detailed workflows, case study, architecture, attribution/privacy, roadmap, support templates and release planning. It can be reviewed as a portfolio artifact. Final publication still requires asset-rights/privacy checks and verifying the uploaded page renders correctly.
-
-### Before Downloads
-
-Resolve distribution licensing, complete the build, run second-PC acceptance and supply usage terms/notices, accurate requirements, versioned release notes and checksums. Those are the remaining concrete delivery gates. An upload button or private repository does not waive dependencies' distribution obligations.
-
-### Keep The Story Defensible
-
-Present Ginja as a solution built around real workflow friction, with documented implementation and creator-reported use. Explain decisions and limitations in plain language. Do not invent customers, benchmark gains, employment experience or completed tests. Let the interface, tutorials and evidence carry the technical story.
+[Visual User Manual](USER-MANUAL.md) · [Validation And Known Limits](VALIDATION.md) · [Architecture](ARCHITECTURE.md) · [Roadmap](../ROADMAP.md) · [Privacy](../PRIVACY.md) · [Rights And Attribution](../RIGHTS.md)
