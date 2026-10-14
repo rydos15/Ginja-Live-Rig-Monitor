@@ -15,7 +15,7 @@ Ginja places focused observations in one dashboard and detachable popouts. An ex
 | Area | Concrete Work | Evidence |
 | --- | --- | --- |
 | Product Thinking | Turned a fragmented rig workflow into focused monitoring and control tasks | Dashboard, workspace modes and popouts |
-| Hardware Workflows | Extended an MC6 Pro with two 3D-printed external resistor-ladder foot controls | Custom hardware section in the manual |
+| Hardware Workflows | Expanded the MC6 Pro with a custom 3D-printed setup using two Omniports and sixteen additional physical buttons, with resistor-ladder detection and programmable Morningstar assignments | Custom hardware section in the manual |
 | Application Integration | Combined MIDI messages, OBS state, process metrics and optional providers | Feature captures and configuration tutorials |
 | Interaction Design | Added detachable views, sizing, appearance settings and saved profiles | Popout and settings chapters |
 | Troubleshooting | Exposed events, process readings and local session reports | Diagnostic workflow and report instructions |
